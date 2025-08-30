@@ -1,0 +1,40 @@
+<!-- 
+ <div class="img_conn" style="background-image: url('../../../assets/in.jpg')"></div> -->
+
+<ion-content>
+
+  <ion-content class="ion-padding ion-text-center"color="white" >
+    <img src="../../assets/logo1.png" class="logo" />
+  <form>
+    <ion-item color="white"  lines="full">
+        <ion-label  color="white" postion="floating">الأيميل </ion-label>
+        <ion-input type="text"color="white" #email required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="white" postion="floating">الباسورد </ion-label>
+      <ion-input type="password"color="white"  #password required></ion-input>
+  </ion-item>
+
+<ion-row>
+  <ion-col>
+    <ion-button type="submit" (click)="logIn(email, password)" color="danger" expand="block">تسجيل دخول</ion-button>
+  </ion-col>
+</ion-row>
+
+
+<ion-row>
+  <ion-col>
+    <ion-button type="submit" (click)="signupPage()" color="danger"  expand="block">تسجيل </ion-button>
+  </ion-col>
+</ion-row>
+  </form>
+
+
+
+
+
+
+
+  
+</ion-content>
+ 

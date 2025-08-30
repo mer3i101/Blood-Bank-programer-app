@@ -1,0 +1,71 @@
+
+<ion-header>
+ 
+</ion-header>
+
+<ion-content>
+  <ion-content class="ion-padding ion-text-center" color="white">
+    <img src="../../assets/logo1.png" class="logo" />
+  <form>
+
+    <ion-item color="white"lines="full">
+      <ion-label postion="floating">الأسم </ion-label>
+      <ion-input type="text" #name required></ion-input>
+  </ion-item>
+
+    <ion-item color="black"lines="full">
+        <ion-label postion="floating">الأيميل </ion-label>
+        <ion-input type="text" #email required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label postion="floating">الباسورد </ion-label>
+      <ion-input type="password" #password required></ion-input>
+  </ion-item>
+    <!-- <ion-item>
+      <ion-label> المدينة</ion-label>
+      <ion-select formControlName="A"  [interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="رام الله">رام الله</ion-select-option>
+        <ion-select-option value="نابلس">نابلس</ion-select-option>
+        <ion-smanager.valueelect-option value="الخليل">الخليل</ion-select-option>
+        <ion-select-option value="طولكرم">طولكرم</ion-select-option>
+        <ion-select-option value="اريحا">اريحا</ion-select-option>
+      </ion-select>
+
+    </ion-item> --> 
+
+<!-- 
+<ion-item color="danger" lines="full">
+    <ion-label postion="floating">manager </ion-label>
+    <ion-input type="text" #manager required ></ion-input>
+</ion-item> -->
+
+<ion-item >
+  <ion-label  >  نوع الحساب   </ion-label>
+  <ion-select color="danger" type="text" #manager required [interfaceOptions]="customActionSheetOptions" interface="action-sheet" color="danger" placeholder="Select One">
+    <ion-select-option type="text" #manager required  color="danger" value="manager">مدير </ion-select-option>
+    <ion-select-option value="user">متطوع  </ion-select-option>
+    
+  </ion-select>
+</ion-item>
+
+
+
+
+<ion-row>
+  <ion-col>
+    <ion-button type="submit" color="danger" (click)="signUp(name,email, password,manager)"  expand="block">تسجيل</ion-button>
+  </ion-col>
+</ion-row>
+
+
+
+<ion-row>
+  <ion-col>
+    <ion-button type="submit" color="danger" (click)="loginPage()"  expand="block">هل لديك حساب ؟</ion-button>
+  </ion-col>
+</ion-row>
+
+  </form>
+
+</ion-content>
+

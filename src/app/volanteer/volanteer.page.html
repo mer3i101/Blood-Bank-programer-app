@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="index-home?userType=manager"></ion-back-button>
+    </ion-buttons>
+    </ion-toolbar>
+    <ion-card color="danger">
+    <ion-card-header>
+      <center> <img src="assets/logo1.png" alt="blood "style="width:200px;height:200px;">  </center>  
+  
+    
+    </ion-card-header>
+  
+    <ion-card-content color="danger">
+      
+  
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="danger" expand="full" id="trigger-button">تعبئة بطاقة التبرع بالدم </ion-button>
+  <ion-modal trigger="trigger-button">
+    <ng-template>
+      <ion-content>
+
+
+<ion-content>
+
+  <ion-list lines="full">
+    <form [formGroup]="hospitalForm" (ngSubmit)="formSubmit()">
+      
+      <ion-item>
+        <ion-label color="danger" postion="floating">  اسم المريض   </ion-label>
+        <ion-input formControlName="par" type="text" required></ion-input>
+      </ion-item>
+    
+
+      
+     
+    <ion-item>
+      <ion-label color="danger"postion="floating">  رقم المريض  </ion-label>
+      <ion-input formControlName="non" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger" postion="floating">الدكتور المشرف    </ion-label>
+      <ion-input formControlName="type" type="text" required></ion-input>
+    </ion-item>
+
+   
+    <ion-item>
+      <ion-label color="danger"> المدينة </ion-label>
+      <ion-select formControlName="doc"  [interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="رام الله">رام الله</ion-select-option>
+        <ion-select-option value="نابلس">نابلس</ion-select-option>
+        <ion-select-option value="الخليل">الخليل</ion-select-option>
+        <ion-select-option value="طولكرم">طولكرم</ion-select-option>
+        <ion-select-option value="اريحا">اريحا</ion-select-option>
+      </ion-select>
+    </ion-item>
+   
+
+
+    <ion-item>
+      <ion-label color="danger"> المستشفى </ion-label>
+      <ion-select formControlName="con"  [interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="رام الله الحكومي ">رام الله</ion-select-option>
+        <ion-select-option value="الأستشاري ">مستشفى الأستشاري </ion-select-option>
+        <ion-select-option value="H.C">H.C</ion-select-option>
+        <ion-select-option value="مستشفى رفيديا ">مستشفى رفيديا</ion-select-option>
+        <ion-select-option value="مستشفى النجاح ">مستشفى النجاح </ion-select-option>
+        <ion-select-option value="مستشفى التركي  ">مستشفى التركي</ion-select-option>
+        <ion-select-option value="مستشفى ثابت ثابت ">مستشفى ثابت ثابت </ion-select-option>
+        <ion-select-option value="مستشفى اريحا الحكومي  ">مستشفى اريحا الحكومي </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label color="danger"  > زمرة الدم</ion-label>
+      <ion-select formControlName="sic"[interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="O-">O−  </ion-select-option>
+        <ion-select-option value="O+">O+</ion-select-option>
+        <ion-select-option value="B+">B+</ion-select-option>
+        <ion-select-option value="B-">B-</ion-select-option>
+        <ion-select-option value="A+">A+</ion-select-option>
+        <ion-select-option value="A-">A-</ion-select-option>
+        <ion-select-option value="AB+">AB+</ion-select-option>
+        <ion-select-option value="AB-">AB-</ion-select-option>
+        <ion-select-option value="لا اعرف">لا اعرف</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+   
+
+<ion-item>
+  <ion-label position="floating" color="danger" >عدد وحدات الدم المطلوبة </ion-label>
+  <ion-input formControlName="nor" type="number"></ion-input>
+</ion-item> 
+
+    <ion-row>
+      <ion-col>
+        <ion-icon slot="icon-only" name="arrow-undo-circle-outline"></ion-icon>
+
+        <ion-button type="submit" color="danger"href="/succ1"  shape="full" expand="full">
+    تسجيل طلب التبرع
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+  </ion-list>
+  
+
+
+</ion-content>
+
+

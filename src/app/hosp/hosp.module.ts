@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { HospPageRoutingModule } from './hosp-routing.module';
+
+import { HospPage } from './hosp.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
+@NgModule({
+  imports: [
+    CommonModule,Ng2SearchPipeModule,
+    FormsModule,
+    IonicModule,
+    HospPageRoutingModule
+  ],
+  declarations: [HospPage]
+})
+export class HospPageModule {}

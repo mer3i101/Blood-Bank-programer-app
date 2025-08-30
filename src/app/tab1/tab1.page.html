@@ -1,17 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
-    </ion-title>
+     Blood
+        </ion-title>
   </ion-toolbar>
 </ion-header>
+
+ion-content>
+  <ion-button (click)="toggleInfiniteScroll()" expand="block">
+    Toggle Infinite Scroll
+  </ion-button>
+
+  <ion-list>blood</ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">welcome</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <img src="assets/index.jpg" alt="blood "style="width:200px;height:200px;">
+      <ion-card-subtitle>new proj</ion-card-subtitle>
+      <ion-card-title>Blood</ion-card-title>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-card-content>
+      this is program is blood
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="danger" href="/tabs/tab2"> صفحة التبرع
+    <a href="/tabs/tab2"></a>
+      </ion-button> 
 </ion-content>
+

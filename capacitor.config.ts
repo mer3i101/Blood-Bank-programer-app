@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'proj blood',
+  appId: 'io.palastine.Blood',
+  appName: 'Blood Bank ',
   webDir: 'www',
   bundledWebRuntime: false
 };

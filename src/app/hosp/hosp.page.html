@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="request"></ion-back-button>
+  </ion-buttons>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-title  >طلبات المستشفيات </ion-title>
+
+      <ion-col>
+          <ion-button expand="rhite" style="float: left;" color="danger" href="/login2"> تسجيل خروج
+            <a href="/contacts"></a>
+            
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>  
+  
+    
+  </ion-toolbar>
+  <ion-searchbar [(ngModel)]="hospital_filter" showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list color="danger">
+    <ion-item *ngFor="let hospital of hospital | filter:hospital_filter">
+      <ion-label>
+        <h5>
+          <ion-icon color="danger"  name="person"> 
+          </ion-icon> {{hospital.par}}
+        </h5>
+        <h5>
+          <ion-icon  color="danger" name="document-text-outline"> 
+          </ion-icon> رقم المريض{{hospital.non}}
+        </h5>
+        <h4>
+          <ion-icon  color="danger" name="water-outline"> 
+          </ion-icon> {{hospital.sic}}
+        </h4>
+        <h4>
+          <ion-icon  color="danger" name="water-outline"> وحدات الدم المطلوبة
+          </ion-icon> وحدات الدم= {{hospital.nor}}
+        </h4>
+        <p> 
+          <ion-icon  color="danger"name="business-outline"> 
+          </ion-icon> {{hospital.con}}
+        </p>
+      </ion-label>
+      <div class="item-note" item-end>
+        <ion-button color="danger" [routerLink]="['/edit-hospital', hospital.$key]">
+          <ion-icon name="thumbs-down-outline"> 
+          </ion-icon>  
+        </ion-button>
+        <ion-button color="primary" (click)="deletehospital(hospital.$key)">
+          <ion-icon name="thumbs-up-outline"> 
+          </ion-icon>  
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div>
+  
+    <ion-fab-button color="dark" href="volanteer">
+    <ion-icon name="add-outline">اضافة طلب </ion-icon>
+    
+    </ion-fab-button>
+    
+    </div>
+    
+
+</ion-content>

@@ -1,0 +1,76 @@
+<ion-header  color="danger">
+  <ion-toolbar color="danger">
+    
+    <ion-buttons slot="start"> 
+
+      <ion-back-button defaultHref="request"></ion-back-button>
+      <ion-title>قائمة المتبرعين </ion-title>
+
+    </ion-buttons>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+
+            <ion-button expand="rhite" style="float: left;" color="danger" href="/login2"> تسجيل الخروج
+              <a href="/contacts"></a>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+     </ion-grid>  
+  </ion-toolbar>
+  <ion-searchbar  [(ngModel)]="employee_filter" showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list color="danger">
+    <ion-item *ngFor="let employee of employees | filter:employee_filter">
+      <ion-label>
+        <h5>
+          <ion-avatar>
+            <img src="https://preview.redd.it/jq1e84d0rke21.png?width=640&crop=smart&auto=webp&s=9b258c41eb887fd3cf2d55b09f6aa6b41d0cd7e7">
+          </ion-avatar>
+          <ion-icon name="person" color="danger"> 
+            
+          </ion-icon> {{employee.name}}
+        </h5>
+        <h4>
+          <ion-icon name="water-outline" color="danger" > 
+          </ion-icon> {{employee.E}}
+        </h4>
+        <p> 
+          <ion-icon name="call"color="danger" > 
+          </ion-icon> {{employee.mobile}}
+        </p>
+        <p> 
+          <ion-icon name="checkmark-circle"color="danger" > حالة الطلب
+          </ion-icon> حالة الطلب :{{employee.orderStatus}}
+        </p>
+      </ion-label>
+
+      
+
+      <div class="item-note" item-end>
+        <ion-button color="primary" [routerLink]="['/edit-employee', employee.$key]">
+          <ion-icon name="create"> 
+          </ion-icon>  
+        </ion-button>
+        <ion-button color="danger" (click)="deleteEmployees(employee.$key)">
+          <ion-icon name="trash"> 
+          </ion-icon>  
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+<div>
+  
+<ion-fab-button color="dark" href="create-employee">
+<ion-icon name="add-outline">اضافة متبرع</ion-icon>
+
+</ion-fab-button>
+
+</div>
+
+</ion-content>

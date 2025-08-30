@@ -1,0 +1,323 @@
+
+<ion-header [translucent]="true">
+  <ion-card color="danger">
+  <ion-card-header>
+    <center> <img src="assets/icon/blood.png" alt="blood "style="width:200px;height:200px;">  </center>  
+
+    <ion-card-subtitle>التبرع بالدم </ion-card-subtitle>
+    <ion-card-title>شروط التبرع بالدم:   </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content color="danger">
+    
+    
+    أن يكون المتبرع بصحة جيدة ولا يعاني أي أمراض معدية.
+     أن يكون عمر المتبرع من 18-65 سنة.
+     يجب أن لا يقل وزن المتبرع عن 50 كجم.
+     أن تكون نسبة الهيموجلوبين للرجال من 14- 17 جم، وللنساء من 12-14 جم.
+     أن يكون النبض بين 50-100 في الدقيقة.
+     أن لا تزيد درجة الحرارة عن 37 درجة مئوية.
+     أن يكون معدل ضغط الدم أقل من120/80 ملم زئبق.
+
+  </ion-card-content>
+</ion-card>
+
+
+  <ion-button color="danger" expand="full" id="trigger-button">تعبئة بطاقة التبرع بالدم </ion-button>
+  <ion-modal trigger="trigger-button">
+    <ng-template>
+      <ion-content>
+
+
+<!-- Basic -->
+<ion-accordion-group>
+  <ion-accordion value="colors">
+    <ion-item slot="header" color="danger">
+      <ion-label>المعلومات الشخصية</ion-label>
+    </ion-item>
+
+    <ion-list slot="content">
+      <ion-item>
+        
+        <ion-label position="floating"> الأسم الرباعي</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      
+      <label class="item item-input">
+        <span class="input-label">تاريخ الميلاد</span>
+        <input type="date" ng-model="intro.dob" name="dob" required>
+      </label>
+      <ion-item>
+        <ion-label position="floating"> رقم الهوية</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-label>الجنس</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">ذكر</ion-select-option>
+      <ion-select-option value="m">انثى</ion-select-option>
+    </ion-select>
+        
+        <ion-item>
+          <ion-label> المدينة</ion-label>
+          <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+            <ion-select-option value="red">رام الله</ion-select-option>
+            <ion-select-option value="purple">نابلس</ion-select-option>
+            <ion-select-option value="yellow">جنين</ion-select-option>
+            <ion-select-option value="orange">طولكرم</ion-select-option>
+            <ion-select-option value="green">اريحا</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>الحالة الأجتماعية  </ion-label>
+          <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+            <ion-select-option value="red">اعزب</ion-select-option>
+            <ion-select-option value="purple">متجوز</ion-select-option>
+            <ion-select-option value="yellow">ارمل</ion-select-option>
+            <ion-select-option value="orange">مطلق</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item>
+        <ion-label position="floating">رقم الهاتف</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      
+     
+      <ion-item>
+        <ion-label position="floating">المهنة ومكان العمل</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      </ion-list>
+  </ion-accordion>
+  <ion-accordion value="shapes">
+    <ion-item slot="header" color="danger">
+      <ion-label>معلومات التبرع</ion-label>
+    </ion-item>
+    <ion-list slot="content">
+      <ion-item>
+        <ion-label color="danger">هل سبق وأن تبرعت بالدم ؟</ion-label>
+        <ion-checkbox color="secondary"></ion-checkbox> 
+      </ion-item>
+      <label class="item item-input" color="danger">
+        <span class="input-label" > متى كانت اخر مرة تبرعت فيها بالدم</span>
+        <input type="date" ng-model="intro.dob" name="dob" required>
+      </label>
+      <ion-item>
+        <ion-label position="floating"color="danger">  هل ترغبب ان تكون متبرع ودائم لدى بنك الدم
+        </ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <label class="item item-input item-select">
+        <div class="input-label" color="danger">ما هو الدافع من تبرعك بلدم </div>
+        
+        <select>
+            <option>صحي</option>
+            <option>عائلي</option>
+            <option>طوعي</option>
+      
+        </select>
+      </label>
+      <ion-item>
+        <ion-label color="danger">هل تبرعك لصالح مريض معين ؟</ion-label>
+        <ion-checkbox color="secondary"></ion-checkbox> 
+      </ion-item>
+      <label class="item item-input">
+        <span  class="input-label">  اسم المريض:</span>
+        <ion-input ></ion-input>
+
+      </label>
+    </ion-list>
+  </ion-accordion>
+  <ion-accordion value="numbers">
+    <ion-item slot="header" color="danger">
+      <ion-label>يرجى الأجابة على الأسئلة التالية</ion-label>
+    </ion-item>
+    <!-- color="danger" -->
+    <ion-list slot="content">
+    
+        <ion-item>
+          <ion-label>هل تتمتع بصحهة جيدة</ion-label>
+          <ion-toggle [(ngModel)]="a" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+        </ion-item>
+        <ion-item>
+
+
+        <ion-label  color="danger">هل انتي حامل او مرضعة؟</ion-label>
+        <ion-toggle [(ngModel)]="b"></ion-toggle>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>  هل انت مصاب بلزكام الأن:</ion-label>
+        <ion-toggle [(ngModel)]="c" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل خلعت ضرسا خلال الأسبوع الماضي:</ion-label>
+        <ion-toggle [(ngModel)]="d" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل كنت في السجن خلال الستة شهور الماضية؟</ion-label>
+        <ion-toggle [(ngModel)]="e" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل تتناول ادوية الأن؟</ion-label>
+        <ion-toggle [(ngModel)]="f" (ionChange)="toggleToFalse()"  color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل سبق لك وان رفضت كمتبرع ؟</ion-label>
+        <ion-toggle [(ngModel)]="g" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل اخذت خلال العام الماضي اي مطاعيم</ion-label>
+        <ion-toggle [(ngModel)]="h" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل اجريت عملية جراحية خلال العام الماضي ؟</ion-label>
+        <ion-toggle [(ngModel)]="i" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل سبق وان تلقيت دما او احد مشتقاتة ؟</ion-label>
+        <ion-toggle [(ngModel)]="u" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+    
+      <ion-item>
+        <ion-label>هل اصبت بأعراض جانبية للتبرع بالسابق ؟</ion-label>
+        <ion-toggle [(ngModel)]="o" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>هل كنت في الخارج خلال السنوات الأخيرة </ion-label>
+        <ion-toggle [(ngModel)]="v" (ionChange)="toggleToFalse()" color="danger"></ion-toggle>
+      </ion-item>
+
+    
+      
+
+    </ion-list>
+    
+  </ion-accordion>
+
+<ion-accordion value="herr">
+  <ion-item slot="header" color="danger">
+    <ion-label > هل انتا مصاب بأحد الأمراض التالية</ion-label>
+    <ion-list slot="mmm">
+      
+    </ion-list>
+  </ion-item>
+  <ion-list slot="content">
+
+ 
+  <ion-item>
+    <ion-label color="danger">نقص في الوزن بسبب غير معروف</ion-label>
+    <ion-checkbox [(ngModel)]="q"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label color="danger">التهاب الكبد</ion-label>
+    <ion-checkbox [(ngModel)]="w"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label color="danger">ارتفاع او هبوط الضغط</ion-label>
+    <ion-checkbox [(ngModel)]="r"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label color="danger">اجد الأمراض القلب</ion-label>
+    <ion-checkbox [(ngModel)]="t"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>تضحم الغدد الدرقية</ion-label>
+    <ion-checkbox [(ngModel)]="y"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>امراض جلدية او تناسلية</ion-label>
+    <ion-checkbox [(ngModel)]="aa"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>السل</ion-label>
+    <ion-checkbox [(ngModel)]="ab"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>اجد امراض الدم </ion-label>
+    <ion-checkbox [(ngModel)]="p"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>حساسية</ion-label>
+    <ion-checkbox [(ngModel)]="z"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>الملاريا</ion-label>
+    <ion-checkbox [(ngModel)]="x"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>اسهال مستمر</ion-label>
+    <ion-checkbox [(ngModel)]="n"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>ارتفاع درجات الحرارة لسبب غير معروف</ion-label>
+    <ion-checkbox [(ngModel)]="j"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>ارتفاع السكر بلقدم  </ion-label>
+    <ion-checkbox [(ngModel)]="kk"></ion-checkbox>
+  </ion-item>
+  </ion-list>
+ </ion-accordion>
+
+</ion-accordion-group>
+
+
+
+
+<ion-toolbar>
+
+
+
+  <ion-button expand="full" color="danger" href="/succ"> تسجيل التبرع 
+    <a href="/succ"></a>
+    <ion-icon slot="icon-only" name="arrow-undo-circle-outline"></ion-icon>
+  
+      </ion-button>
+      </ion-toolbar>
+
+    </ion-content>
+  </ng-template>
+  </ion-modal>
+<!-- <ion-content>
+  <ion-button color="success" href="/contacts"> تسجيل التبرع 
+    <a href="/contacts"></a>
+      </ion-button>
+  <ion-item>
+  -->
+
+  

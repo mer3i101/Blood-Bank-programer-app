@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667418094994",
+    "project_id": "blood-mer3i",
+    "storage_bucket": "blood-mer3i.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667418094994:android:4fc0fe5b0e29d218fba54b",
+        "android_client_info": {
+          "package_name": "Blood.apk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667418094994-jvusui3ottjghapnn6nlo6gke87i40m2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK7kgGfbv_CKS9jE4Jt1ah38cIx18UD5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667418094994-jvusui3ottjghapnn6nlo6gke87i40m2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

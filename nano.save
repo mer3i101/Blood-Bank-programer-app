@@ -1,0 +1,78 @@
+  <ion-label position="fixed">enter name</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label number="fixed">enter phone</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+
+<ion-item>
+  <ion-label type="number" value="">volanteer old</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="fixed">blood opp</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+<!-- Number type input -->
+<ion-input type="number" value="">enter the num</ion-input>
+=<!-- Checkbox Colors -->
+<ion-checkbox color="primary"></ion-checkbox>
+<ion-content [fullscreen]="true">
+  
+  <ion-button size="large">login</ion-button>
+  <ion-button size="large">clr</ion-button>
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/logo.jpg" alt="blood "style="width:200px;height:200px;">
+
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button expand="full" color="danger" href="/blood-rig"> volanteer
+            <a href="/blood-rig"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+  
+
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button expand="full" color="danger" href="/volanteer">  need to bloood
+            <a href="/volanteer"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+  
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button expand="full" color="danger" href="/signup">  user
+            <a href="/signup"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+   <ion-button color="danger" href="/login">  login
+   <a href="/login"></a>
+
+</ion-content>
+
+"m
+wq
+:qw
+:wq
+

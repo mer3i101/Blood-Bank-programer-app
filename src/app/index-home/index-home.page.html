@@ -1,0 +1,90 @@
+<ion-header>
+  
+  <ion-toolbar color="danger">
+
+        
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-buttons expand="Rhite"  style="float: right;;" slot="end">
+          <ion-button  fill="clear" [routerLink]="['/', 'profile']">
+            <ion-icon  expand="rhite" slot="icon-only" name="person-circle"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button expand="rhite" style="float: left;;" color="danger" 
+          href="/login2"> تسجيل خروج
+            <a href="/contacts"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content class="ion-padding ion-text-center" color="white">
+
+<ion-center> <img src="assets/logo1.png" alt="blood 
+  "style="width:200px;height:200px;"> 
+</ion-center>  
+
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button *ngIf="userType=='user'"
+            expand="full" color="danger"
+           href="/contacts"> تعبئة طلب تبرع بالدم  
+            <a href="/contacts"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+  
+   
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button *ngIf="userType=='manager'"
+            expand="full" color="danger"
+           href="/end"> تعبئة طلب تبرع بالدم  
+            <a href="/end"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button *ngIf="userType=='manager'" 
+           expand="full" color="danger" 
+          href="/volanteer">  تقديم طلب الحصول على وحدات الدم
+            <a href="/volanteer"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+  
+   <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button *ngIf="userType=='manager'" 
+          expand="full" color="danger"
+           href="/request">  بنك الدم  
+            <a href="/request"></a>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+
+<!-- 
+   <ion-fab-button color="dark" href="end">
+    <ion-icon name="add-outline">اضافة متبرع</ion-icon>
+    
+    </ion-fab-button> -->
+
+
+</ion-content>

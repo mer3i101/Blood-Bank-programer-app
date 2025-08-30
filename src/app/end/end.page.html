@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+
+    <ion-buttons  slot="start">
+      <ion-back-button color="danger"defaultHref="index-home?userType=manager"></ion-back-button>
+    </ion-buttons>
+    </ion-toolbar>
+    <ion-card color="danger">
+    <ion-card-header>
+      <center> <img src="assets/logo1.png" alt="blood "style="width:200px;height:200px;">  </center>  
+  
+      <ion-card-subtitle>التبرع بالدم </ion-card-subtitle>
+      <ion-card-title>شروط التبرع بالدم:   </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content color="danger">
+      
+      
+      أن يكون المتبرع بصحة جيدة ولا يعاني أي أمراض معدية.
+       أن يكون عمر المتبرع من 18-65 سنة.
+       يجب أن لا يقل وزن المتبرع عن 50 كجم.
+       أن تكون نسبة الهيموجلوبين للرجال من 14- 17 جم، وللنساء من 12-14 جم.
+       أن يكون النبض بين 50-100 في الدقيقة.
+       أن لا تزيد درجة الحرارة عن 37 درجة مئوية.
+       أن يكون معدل ضغط الدم أقل من120/80 ملم زئبق.
+  
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="danger" expand="full" id="trigger-button">تعبئة بطاقة التبرع بالدم </ion-button>
+  <ion-modal trigger="trigger-button">
+    <ng-template>
+      <ion-content>
+
+<ion-content>
+
+  <ion-list lines="full">
+    <form [formGroup]="employeeForm" (ngSubmit)="formSubmit()">
+      
+      <ion-item>
+        <ion-label color="danger" postion="floating">  الأسم الرباعي  </ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+    
+
+    <label color="danger" class="item item-input">
+      <span class="input-label" color="danger" >تاريخ الميلاد</span>
+      <input formControlName="date"  type="date" ng-model="intro.dob" name="dob" required>
+    </label>
+      
+      
+     
+    <ion-item>
+      <ion-label color="danger"postion="floating">  رقم الهوية  </ion-label>
+      <ion-input formControlName="A" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger" postion="floating">رقم الهاتف    </ion-label>
+      <ion-input formControlName="mobile" type="text" required></ion-input>
+    </ion-item>
+
+   
+    <ion-item>
+      <ion-label color="danger"> المدينة</ion-label>
+      <ion-select formControlName="B"  [interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="رام الله">رام الله</ion-select-option>
+        <ion-select-option value="نابلس">نابلس</ion-select-option>
+        <ion-select-option value="الخليل">الخليل</ion-select-option>
+        <ion-select-option value="طولكرم">طولكرم</ion-select-option>
+        <ion-select-option value="اريحا">اريحا</ion-select-option>
+        <ion-select-option value="جنين">جنين</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" >الحالة الأجتماعية  </ion-label>
+      <ion-select formControlName="D" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="اعزب">اعزب</ion-select-option>
+        <ion-select-option value="متجوز">متجوز</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger"  > زمرة الدم</ion-label>
+      <ion-select formControlName="E"[interfaceOptions]="customActionSheetOptions"  interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="O-">O−  </ion-select-option>
+        <ion-select-option value="O+">O+</ion-select-option>
+        <ion-select-option value="B+">B+</ion-select-option>
+        <ion-select-option value="B-">B-</ion-select-option>
+        <ion-select-option value="A+">A+</ion-select-option>
+        <ion-select-option value="A-">A-</ion-select-option>
+        <ion-select-option value="AB+">AB+</ion-select-option>
+        <ion-select-option value="AB-">AB-</ion-select-option>
+        <ion-select-option value="لا اعرف">لا اعرف</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" postion="floating">  هل لديك امراض سابقة </ion-label>
+      <ion-input  formControlName="details" type="text" required></ion-input>
+    </ion-item>
+
+   
+
+
+    <ion-item>
+      <ion-label color="danger" > متى كانت اخر مرة تبرعت فيها بالدم     </ion-label>
+      <ion-select formControlName="F" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="شهر">شهر </ion-select-option>
+        <ion-select-option value="6اشهر ">6 اشهر واكثر  </ion-select-option>
+        <ion-select-option value="سنة واكثر">سنة واكثر  </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+
+
+    
+
+    
+    
+    <ion-item>
+      <ion-label color="danger" > هل سبق وأصبت بفايروس كورونا       </ion-label>
+      <ion-select formControlName="mhm" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
+        <ion-select-option value="نغم">نعم</ion-select-option>
+        <ion-select-option value="لا">لا</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+
+
+
+    <ion-row>
+      <ion-col>
+        <ion-icon slot="icon-only" name="arrow-undo-circle-outline"></ion-icon>
+        
+        <ion-button (click)="formSubmit()" color="danger"  shape="full" expand="full">
+    تسجيل طلب التبرع
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+  </ion-list>
+  
+
+
+</ion-content>
